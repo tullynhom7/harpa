@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+
+        <!-- PWA -->
+        <link rel="manifest" href="manifest.json" />
+		<meta name="description" content="Desenvolvimento de webSoftwares">
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="application-name" content="Harpa Cristã" />
+		<meta name="apple-mobile-web-app-title" content="Harpa Cristã" />
+		<meta name="msapplication-starturl" content="/index.html" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- PWA Icons -->
+
+        <!-- <link rel="apple-touch-icon" href="lib/PWA/apple-touch-icon-iphone-60x60.png"> -->
+		<!-- <link rel="apple-touch-icon" sizes="60x60" href="lib/PWA/apple-touch-icon-ipad-76x76.png"> -->
+		<!-- <link rel="apple-touch-icon" sizes="114x114" href="lib/PWA/apple-touch-icon-iphone-retina-120x120.png"> -->
+		<!-- <link rel="apple-touch-icon" sizes="144x144" href="lib/PWA/apple-touch-icon-ipad-retina-152x152.png"> -->
+
+		<link rel="apple-touch-icon" sizes="16x16" href="src/PWA/ios/16.png">
+		<link rel="apple-touch-icon" sizes="20x20" href="src/PWA/ios/20.png">
+		<link rel="apple-touch-icon" sizes="29x29" href="src/PWA/ios/29.png">
+		<link rel="apple-touch-icon" sizes="32x32" href="src/PWA/ios/32.png">
+		<link rel="apple-touch-icon" sizes="40x40" href="src/PWA/ios/40.png">
+		<link rel="apple-touch-icon" sizes="50x50" href="src/PWA/ios/50.png">
+		<link rel="apple-touch-icon" sizes="57x57" href="src/PWA/ios/57.png">
+		<link rel="apple-touch-icon" sizes="58x58" href="src/PWA/ios/58.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="src/PWA/ios/60.png">
+		<link rel="apple-touch-icon" sizes="64x64" href="src/PWA/ios/64.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="src/PWA/ios/72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="src/PWA/ios/76.png">
+		<link rel="apple-touch-icon" sizes="80x80" href="src/PWA/ios/80.png">
+		<link rel="apple-touch-icon" sizes="87x87" href="src/PWA/ios/87.png">
+		<link rel="apple-touch-icon" sizes="100x100" href="src/PWA/ios/100.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="src/PWA/ios/114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="src/PWA/ios/120.png">
+		<link rel="apple-touch-icon" sizes="128x128" href="src/PWA/ios/128.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="src/PWA/ios/144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="src/PWA/ios/152.png">
+		<link rel="apple-touch-icon" sizes="167x167" href="src/PWA/ios/167.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="src/PWA/ios/180.png">
+		<link rel="apple-touch-icon" sizes="192x192" href="src/PWA/ios/192.png">
+		<link rel="apple-touch-icon" sizes="256x256" href="src/PWA/ios/256.png">
+		<link rel="apple-touch-icon" sizes="512x512" href="src/PWA/ios/512.png">
+		<link rel="apple-touch-icon" sizes="1024x1024" href="src/PWA/ios/1024.png">
+
+        <meta charset="UTF-8">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+        <title>Harpa Cristã</title>
+        <!-- Material Pieces -->
+        <link rel="stylesheet" href="src/css/pieces/pieces.css">
+        <script src="src/js/pieces/pieces.js"></script>
+        <!-- m css -->
+        <link rel="stylesheet" href="src/css/style.css">
+        <link rel="stylesheet" href="src/css/pages/home.css">
+        <link rel="stylesheet" href="src/css/pages/favorite.css">
+        <link rel="stylesheet" href="src/css/pages/config.css">
+        <!-- m js -->
+        <script src="src/js/tools.js"></script>
+        <script src="src/js/harpa.js"></script>
+        <script src="src/js/db.js"></script>
+        <!-- m pages -->
+        <script src="src/js/pages/home.js" defer></script>
+        <script src="src/js/pages/favorite.js" defer></script>
+        <script src="src/js/pages/config.js" defer></script>
+
+        <!-- last m js -->
+        <script src="src/js/index.js" defer></script>
+        <!-- Libs js CDN -->
+        <!-- <style>* {box-shadow: 0 0 0 1px rgba(255,0,0,0.2);}</style> -->
+    </head>
+    <body class="light triade pieces-surface background-color-bg text-color-to-bg">
+        <header id="m-header" class="pieces-surface">
+            <div id="titulo">
+                <img src="src/android/play_store_512.png" width="48px" height="48px" style="border-radius:12px;">
+                <h1>Harpa Cristã</h1>
+                <h2>Início</h2>
+            </div>
+        </header>
+        <span id="m-divider-h" class="pieces-divider pieces-surface background-color-fg"></span>
+        <main id="m-main"></main>
+        <span id="m-divider-v-1" class="pieces-divider pieces-surface background-color-fg"></span>
+        <nav id="m-nav"></nav>
+        <span id="m-divider-v-2" class="pieces-divider pieces-surface background-color-fg"></span>
+        <aside id="m-aside"></aside>
+        <style>
+            #install_button {
+                position: absolute;
+                bottom: 16px;
+                right: 16px;
+                .install_mobile {display: none;}
+            }
+            @media screen and (max-width: 768px){
+                #install_button {
+                    bottom: 96px;
+                    .install_mobile {display: grid;}
+                    .install_desktop {display: none;}
+                }
+            }
+        </style>
+        <button id="install_button" class="
+            pieces-FAB small
+            pieces-surface
+            background-color-accent
+            background-color-hover-to-accent
+            text-color-to-accent
+            ripple-to-accent
+        ">
+            <span class="material-symbols-rounded icon install_mobile" translate="no">install_mobile</span>
+            <span class="material-symbols-rounded icon install_desktop" translate="no">install_desktop</span>
+            <span class="pieces-ripple"></span>
+        </button>
+        <!-- PWA | scripts -->
+		<script src="scripts.js"></script>
+    </body>
+</html>

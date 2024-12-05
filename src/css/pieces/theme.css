@@ -1,0 +1,44 @@
+.triade {
+    --primary: var(--main-color);
+    --secondary: calc(var(--primary) + 120);
+    --tertiary: calc(var(--secondary) + 120);
+}
+.analoga {
+    --primary: var(--main-color);
+    --secondary: calc(var(--primary) + 30);
+    --tertiary: calc(var(--secondary) + 60);
+}
+.complementar {
+    --primary: var(--main-color);
+    --secondary: calc(var(--primary) + 120);
+    --tertiary: calc(var(--secondary) + 30);
+}
+
+.primary {--h: var(--primary);}
+.secondary {--h: var(--secondary);}
+.tertiary {--h: var(--tertiary);}
+
+.light {
+    --tema: 100%;
+    --tema-inverso: 0%;
+    --tema-calc: -;
+    --tema-calc-inverso: +;
+    &.inverse, .inverse {
+        --tema: 0%;
+        --tema-inverso: 100%;
+        --tema-calc: +;
+        --tema-calc-inverso: -;
+    }
+}
+.dark {
+    --tema: 0%;
+    --tema-inverso: 100%;
+    --tema-calc: +;
+    --tema-calc-inverso: -;
+    &.inverse, .inverse {
+        --tema: 100%;
+        --tema-inverso: 0%;
+        --tema-calc: -;
+        --tema-calc-inverso: +;
+    }
+}

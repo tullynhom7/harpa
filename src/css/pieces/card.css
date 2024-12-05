@@ -1,0 +1,33 @@
+.pieces-card {
+    &.outlined {
+        border: solid 1px hsla(var(--h),var(--s),calc(var(--tema) var(--tema-calc) 28% var(--tema-calc) 8%),var(--a));
+    }
+    &.outlined:has(input:checked) {
+        background: hsla(var(--h),var(--s),calc(var(--surface-background) var(--tema-calc) 8%),var(--a));
+        border: solid 1px hsla(var(--h),var(--s),calc(var(--tema) var(--tema-calc) 76% var(--tema-calc) 12%),var(--a));
+    }
+}
+
+.pieces-surface {
+    &.card {
+        --card-background: var(--surface-background);
+        background: hsla(var(--h),var(--s),var(--card-background),var(--a));
+        position: relative;
+        &.outlined {
+            border: solid 1px hsla(var(--h),var(--s),calc(var(--card-background) var(--tema-calc) 16%),var(--a));
+        }
+        &.elevated {
+            box-shadow: 0 0 4px 1px hsla(var(--h),var(--s),calc(var(--card-background) var(--tema-calc) 16%),var(--a));
+        }
+        &:has(>input:checked) {
+            --card-background: calc(var(--surface-background) var(--tema-calc) 8%);
+            &.outlined {
+                border: solid 1px hsla(var(--h),var(--s),calc(var(--card-background) var(--tema-calc) 52%),var(--a));
+            }
+        }
+        &.hovered,
+        &:hover:not(.not-hover) {
+            --card-background: calc(var(--surface-background) var(--tema-calc) 4%);
+        }
+    }
+}

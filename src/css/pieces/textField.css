@@ -1,0 +1,59 @@
+.pieces-text-field {
+
+    position: relative;
+    z-index: 1;
+    transition: .3s;
+
+    &>:nth-child(1) {
+        height: 56px;
+        border-radius: 8px;
+        padding: 8px;
+        padding-left: 16px;
+        display: flex;
+        align-items: center;
+        cursor: var(--cursor-text);
+        gap: 8px;
+
+        &>.label {
+			position: absolute;
+			left: 16px;
+			top: 16px;
+			transition: .3s;
+		}
+
+        &>input {
+            all: unset;
+            width: 0px;
+            flex: 1 1 0%;
+            &::placeholder { user-select: none;}
+        }
+        &:has(input:focus) { padding: 8px 7px; padding-left: 15px;}
+
+        &:has(input:focus, input:valid) {
+
+			&>.label {
+				top: -8px;
+				font-size: 12px;
+                padding: 0 4px;
+                background: inherit;
+			}
+
+		}
+
+        /* &>:nth-child(2) { order: -1;} */
+    }
+    &>div:nth-child(2) {
+        display: none;
+        position: absolute;
+        width: 100%;
+        min-height: 240px;
+        height: 100vh;
+        max-height: calc(2/3 * 100vh);
+        border-radius: 0 0 16px 16px;
+        &>div {
+            padding: 16px;
+            display: flex;
+            gap: 16px;
+        }
+    }
+}

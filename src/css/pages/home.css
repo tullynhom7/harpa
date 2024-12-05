@@ -1,0 +1,99 @@
+#page-home {
+    display: grid;
+    overflow-y: scroll;
+    gap: 1px;
+    .card-list {
+        display: grid;
+        padding: 16px;
+        grid-template-columns: auto 1fr;
+        gap: 16px;
+        align-items: center;
+        user-select: none;
+        &>*{pointer-events: none;}
+        .numero {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 16px;
+            aspect-ratio: 1/1;
+            font-weight: 900;
+        }
+        .nome {
+            font-size: 20px;
+            border-radius: 4px;
+            text-align: start;
+        }
+        &>:where(.numero, .nome):nth-child(-n+15) {
+            animation: list .6s ease-in-out;
+        }
+    }
+}
+
+#popover-letra {
+    display: grid;
+    grid-template-rows: 80px 1fr 80px;
+    overflow: hidden;
+    &>header {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 16px;
+        padding: 16px;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        .numero {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            border-radius: 16px;
+            aspect-ratio: 1/1;
+            font-weight: 900;
+        }
+        .nome {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+    }
+    &>main {
+        display: grid;
+        gap: 16px;
+        padding: 0 16px 16px 16px;
+        overflow-y: scroll;
+        --font-sizes: 5;
+        &>div {
+            display: grid;
+            gap: 4px;
+            font-size: 16px;
+            font-size: 32px;
+            &>p{
+                font-size: calc(16px + ((var(--font-size) - 1) * 4px));
+                border-radius: 8px;     
+                padding: 16px;
+                &:first-of-type {border-radius: 32px 32px 8px 8px;}
+                &:last-of-type {border-radius: 8px 8px  32px 32px;}
+            }
+            &>* {
+                pointer-events: none;
+            }
+        }
+    }
+    &>footer {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 16px;
+        padding: 16px;
+        place-content: center;
+        place-items: center;
+        .accent {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    }
+}

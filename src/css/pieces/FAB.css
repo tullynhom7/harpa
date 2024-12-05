@@ -1,0 +1,17 @@
+.pieces-FAB {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-content: center;
+    border-radius: 16px;
+    cursor: var(--cursor-pointer);
+    transition: .3s;
+    position: relative;
+    user-select: none;
+    * {pointer-events: none;}
+    &.small {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+    }
+}

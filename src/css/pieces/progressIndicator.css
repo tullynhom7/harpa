@@ -1,0 +1,37 @@
+.pieces-progress-indicator {
+    --progress-indicator-background: 
+        hsla(var(--h),var(--s),calc(var(--surface-background) var(--tema-calc) 8%),var(--a))
+    ;
+    background: var(--progress-indicator-background);
+    height: 4px;
+    width: 100%;
+    display: grid;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+
+    &.on {
+        opacity: 1;
+    }
+
+    .indicator {
+        background: hsla(var(--h),var(--s),48%,var(--a));
+        width: 0%;
+        transition: .3s;
+    }
+
+    &.absolute {
+        position: absolute;
+    }
+    &.start {
+        .indicator {
+            width: 75%;
+        }
+    }
+    &.end {
+        .indicator {
+            width: 100%;
+        }
+    }
+
+}

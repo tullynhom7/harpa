@@ -1,0 +1,113 @@
+@import url("theme.css");
+@import url("surface.css");
+/* @import url("card.css"); */
+@import url("button.css");
+/* @import url("iconButton.css"); */
+/* @import url("radio.css"); */
+/* @import url("checkbox.css"); */
+/* @import url("badge.css"); */
+/* @import url("segmentedButton.css"); */
+/* @import url("navigation.css"); */
+/* @import url("scrim.css"); */
+/* @import url("sheets.css"); */
+@import url("divider.css");
+/* @import url("switches.css"); */
+/* @import url("tooltip.css"); */
+/* @import url("chip.css"); */
+@import url("FAB.css");
+/* @import url("textField.css"); */
+/* @import url("snackbar.css"); */
+/* @import url("search.css"); */
+/* @import url("dialog.css"); */
+/* @import url("menu.css"); */
+/* @import url("progressIndicator.css"); */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* font-size: 1rem; */
+    font-family: sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    font-family: "Montserrat", "sans-serif";
+
+}
+
+.debug-mode, .debug-mode-all * {box-shadow: 0 0 0 1px rgba(255,0,0,0.2);}
+
+.icaon {
+    font-variation-settings: "FILL" 0,"wght" 400,"GRAD" 0,"opsz" 48;
+}
+
+:root {
+
+    --main-color: 49;
+
+    --h: var(--main-color);
+    --s: 40%;
+    --l: 0%;
+    --a: 100%;
+
+    --cursor-default:
+        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAlwSFlzAAAAyAAAAMgAY/rnrQAAAAd0SU1FB+cKHhcCKs0HpzYAAAABb3JOVAHPoneaAAAB0ElEQVRIx+2Uv2sUQRTHv7O7WX9g1ngeBkkaQU4QrCR3kMAdWJwICudhOu20MNhYWIpI/oMrYhG4JqmSJn1IIULSiFZicTkEBQuvEJRD73Znv77ZnBGS29vdtOY7DLPD8v0w782bB+xLyRDZOIJUNOp4OHlJdtYeKYssmU2LHtF1nqrMCLHnroKNoNN/QtBuqL/QlLLFcE+F7YBk+MoHsVY5mSUbBnDfZisI2RPGhn+KeF3Ip0cMALtyAs2+IHb8C8SH6cvyz8kMIH2ZLf8K8TVXSoc4ANhDdII54uf4nTSIQwDS5POXvkuEpx9FuVAZAYMv/ViD7vOkyhgKkBs1u3AxANXSC2sUIgZgECaUZt+h3VQjSisWYBDmWpeluMZL8dU5FBDIXQSyN+tv39Mwb8RJCdD/kmAI+l3PpbWgYivzACCIzJv6GWssc5YlThAdt5AYQisCGPuuviGvEt/xEW+xjTdYx82kOnhgh58Gj+m9nhTz2MvzM1PThXzRK3rXx6KmEw8A3NvgVnT2trF/8aqHetbIhoaLedW+xm/9z35B4j1TjuK1Bq1OJfcnk+A6uud4lvjh1pKrfyjCvYUVrJ6oJh14BGLerjhHtR/r/9Yf5atvxv6H2gMAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMTAtMzBUMjM6MDI6NDArMDA6MDDfAt3UAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTEwLTMwVDIzOjAyOjQwKzAwOjAwrl9laAAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMy0xMC0zMFQyMzowMjo0MiswMDowMG7VVZ4AAAAASUVORK5CYII=') 5 2, auto
+    ;
+    --cursor-pointer:
+        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAlwSFlzAAAAyAAAAMgAY/rnrQAAAAd0SU1FB+cKHxQJO/65hzMAAAABb3JOVAHPoneaAAACPUlEQVRIx+2UP2gUURDGv333J2YxR7wYyOmBEFMoJOaqaDQKWko4IQhqk8IiIBYaxEJRUkZIr6bwD2plJagEDFjYqSnERoRooyEm3EGU4MXbt+9z3m2UmOzeedfqzC273L75zZv3zQ6w3pT9OZV7IyaRqTSOoid4rtds6m582k5lcK6RXagY8DhPXbpDlNq2oU6EpOxLYf6pT1PWHcQQHcTqBLR3oPCMND90l1EnJH2TIJw6AFszKFpAWQC4OuI6QQ1xcVX7ACXXL8B37jCbiVkMI+9mVFCJqpZbBaqlswHgK6c5zzNsYhfxBZdxtjlbVViJ78SuOAZdFKcF4NNa0X+ttR5mJ/uJhUQOTtguHPEUHmIlpvEGF9WiBWiKFAzssyl4XDlFPJFCQlSJCfT2AGfMO44zTZjnEqQroWYVI5f/wOA946Hb79mCb0NBjD+rd/PRbwBXMWX5Y4KYYcQxJhKnURykNiVZvsCPQc415glglJiKRyvRegzLV2wHMswE4MkZ3I0jqjOVg00XHL7UdrHZABBNvMPEtVgkQOQZS2Kql77WIQC7iW7ivLI9Gd0I7TksTUgZ3rpYCyzpDHHSQbWPS8pIjrn8oP/UoFIA50wzcaQ6QBqqtxWv+oNDlzC/0gXG4sxbQmNPrfkgCVr2onCcS55ErXXvhUYxna09YOR1Mo+5DA/xIAd4gPu5j33iO4nFtpa/mZOywM1hHPdxr+K3cBM3cB2TuBStwAaEwmQicMqUtN7gjP9v/4z9BB6Ht+CPNZq3AAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIzLTEwLTMxVDIwOjA5OjU5KzAwOjAwbXKeMQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMy0xMC0zMVQyMDowOTo1OSswMDowMBwvJo0AAAAodEVYdGRhdGU6dGltZXN0YW1wADIwMjMtMTAtMzFUMjA6MDk6NTkrMDA6MDBLOgdSAAAAAElFTkSuQmCC') 10 2, pointer
+    ;
+    --cursor-text:
+        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRAD/h4/MvwAAAAlwSFlzAAAAyAAAAMgAY/rnrQAAAAd0SU1FB+cLARcREF/+UW8AAAABb3JOVAHPoneaAAABdUlEQVRIx+2UO0sDQRSFz242iqJoDJFoFm18FGKMIGJhY2GlTQpBgqCIRSBaidgLWghBe/+ClYWSykLstBQfUSTEToiICWQ3mxxv4gPLHQQbc4aBe+HOt7NzZw7wQxp0mbVAIh2qmscq4piZbdZhTGAFCcn9Hzh3yrTRpE6kcQ4GZYAYBVxuxQAud2wWH5wYIzytsHRtw/YOuwZ4gKsoD/lGlm2HTHGLGr0jrgGiM+SQ7+czyWXCkSyHIRVAe4/PHIeVIkstNDYnfQhUN6akvoCePyFtPxHTlNvogRYyUagCOoglavCqAeRfzdA3YFGrtaYO+HPAL9son+wNal8XaUGD6j00qIcHUDwWQCubEtTRoAY4wi2eOpklK1HiVbI7DLp+TFJ1M8UkH2U5y2UeMC7PGREVQ7lIWiwWSuucZtqhnbVgKRiKHFmmm2OU83/BvcEwh9QsTbSBfewiHjLXGjGHbezJ6FIxVan0fFZXI3Vbr+v/6h1WmcQwNTFeQwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0xMS0wMVQyMzoxNzoxNiswMDowMPmFuEMAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjMtMTEtMDFUMjM6MTc6MTYrMDA6MDCI2AD/AAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDIzLTExLTAxVDIzOjE3OjE2KzAwOjAw380hIAAAAABJRU5ErkJggg==') 10 2, text !important
+    ;
+    --cursor-not-allowed:
+        url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAJkUExURQAAAAEBAQIAAAAAAAAAAAAAAAAAAAAAAAAAABcXF/8AAH8AAP8AAAAAAAAAAAQEBAsAAAAAAAAAAAAAAAAAAAAAAAkAABISEpKSkuvr6wMDAwYAAAAAAAAAAAUAAAAAAAEBAd3d3f///5aWlgEAAAABAfUAAP8AAP8CAvkAAAAAAAAAANvb27CwsPMAAP0AAAAAANzc3BwuLloAAHQDAwAAAP8CAgAAAD8AAFwAAPYAAO0AAE0AAAYAABIAAAAAAAMAACInJwMAAAAAAOPi4g4ODgAAAP///////9LS0gICAru7uwAAAAYGBtzc3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDA9/f38/PzwUFBRMTExsbGyYmJjY2NjMzMwYGBr29vd3d3Q4ODhkZGQEBAerq6uLi4gwMDAMDAwAAAAYGBgYGBgAAAAcHB1VVVT8/PwICAg4ODgAAAGxsbCECAm0DA4YAAHADAyYCAv///04AAFoAAAMDA/7+/vn5+QoODhkCAv8yMvlYWPoAAPlSUv86OiUCAvz8/P8BAflGRv5bW/5NTflTU/n09A0fH3AAAP4EBP5AQP/5+f/8/P5MTIcAAPv39w4gIP5OTv/19f/39/77+xcoKFcBAf8AAPlMTP5BQflaWv39/VFVVQ0AAPACAv8rK/lKSvlERB8BAcC+vgADA0IBAekAAP8DA4mHhwABAQwAAFgAAHIAAHMAAKakpDo+PgcXFwAPDwcYGPDv79bS0tHNzdHMzNzY2AYGBnR0dE5OTj09PTg4ODY2Ng8PD0JCQhcXFy0tLSYmJhEREc0AjqAAAABxdFJOUwAAAAMCBAFSZCEBCAKe9XEtn9bj2KQ0Kvz6lFH2+l5U/vz+/Ljw+v39+/5c/Pz++678/P7+4v7qEAv8/v5O/v2D/v04+/5x/fz5av3rJv3v18zGw6tHXf78/YE1HBQOBUz8/UYU3fr7PlLyUEmjRgME0UyzVAAAAAFiS0dEIl1lXKwAAAAJcEhZcwAAAMgAAADIAGP6560AAAAHdElNRQfnCwIAFA7TWoJSAAAAAW9yTlQBz6J3mgAAAadJREFUOMtjYAABRkYGZiDFwgriMLMwoAI2NjZ2Dk4GFiBk4uLm5mFiQFPBwsBbWMTHz8jMICAoJCwsIioGNg5JXrxYQrKkWIpRWqa0rLy8olJWDsUMZkZ5BcUqJeViFdVqNXUNDXXNGi0UM5gZtWt16uqrdBsa9ZqaW1pa2/TbDZjQFBhWdXRUGRl3dlV191T1qpuYcjNgKKjq658wsWXS5ClTW8ymmVtgUTB9BlDBzFmzu3EpmDN33vwFVTMXVi1SrxC2xFCweHHVkqXLlq9oaVnZZLVKhYkFi4LVa9aum79+/Xxrm2JbBgxfLK6qq9qwcdPmLVtr7OwdGNgwragCqti2fcfOnbscnZxRwhquAKhi9569+/a7uLoxsmJTsLiuSsnd3cPd84AXIzYTOqqUvA8eOnzk6DEfX7TIAsZF1eKOKr/jxf4BgUHBIaGoyYGZMSw8AhhZkSf8o6JjYuPi4lH8AFTAkFCcWFWVdEI4GZbE0FIcQ0rqybT0Uz4ZDCwsbCDAgJ4mGTL5Th/LymZgxpCCq8jJFc1jwCUNVpFfgE9+FDAwAACVJI5y3Wy1+QAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0xMS0wMlQwMDoyMDoxNCswMDowMGBIyIMAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjMtMTEtMDJUMDA6MjA6MTQrMDA6MDARFXA/AAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDIzLTExLTAyVDAwOjIwOjE0KzAwOjAwRgBR4AAAAABJRU5ErkJggg==') 10 2, not-allowed
+    ;
+}
+
+
+
+/*RIPPLE*/
+.pieces-ripple {
+    inset: 0;
+    margin: auto;
+    background: transparent;
+    opacity: 1;
+    overflow: hidden;
+    border-radius: inherit;
+    position: absolute;
+    display: block;
+    pointer-events: none;
+
+    width: calc(inherit - 10px);
+    height: calc(inherit - 10px);
+}
+.pieces-ripple > .pieces-ripple-effect {
+    pointer-events: none;
+    width: 0.125rem;
+    height: 0.125rem;
+    position: absolute;
+    border-radius: 50%;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    animation: piecesRippleEffect 0.5s ease-in-out;
+    z-index: 1;
+    opacity: .5;
+}
+.pieces-ripple > .pieces-ripple-effect {
+    --pieces-ripple-effect: hsla(var(--h),var(--s),var(--pieces-ripple),var(--a));
+    background: var(--pieces-ripple-effect);
+}
+@keyframes piecesRippleEffect { 
+    0% { transform: scale(1);} 
+    100% { opacity: 0; transform: scale(var(--pieces-scale));}
+}
+
+
+
+body { cursor: var(--cursor-default);}
+.disabled {cursor: var(--cursor-not-allowed);}
+
+::-webkit-scrollbar { display: none;}

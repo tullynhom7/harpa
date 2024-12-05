@@ -1,0 +1,33 @@
+.pieces-chip {
+    background: var(--chip-background);
+    border: solid 1px transparent;
+    /* border-color: var(--chip-background); */
+    border-radius: 100vh;
+    display: grid;
+    gap: 4px;
+    grid-auto-flow: column;
+    place-self: start;
+    align-items: center;
+    padding: 4px;
+    user-select: none;
+    cursor: var(--cursor-pointer);
+
+    &>input { position: absolute; opacity: 0;}
+
+    .icon {
+        border-radius: 100%;
+        padding: 4px;
+        font-size: 16px;
+    }
+
+    .label {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    &.surface {
+        --chip-background: hsla(var(--h),var(--s),calc(var(--surface-background) var(--tema-calc) 8%),var(--a));
+        --chip-color: hsla(var(--h),var(--s),calc(var(--surface-color) var(--tema-calc) 20%),var(--a));
+        --ripple: var(--tema-inverso);
+    }
+}

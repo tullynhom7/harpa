@@ -1,0 +1,12 @@
+#page-config {
+    display: grid;
+    gap: 16px;
+    padding: 16px;
+    place-content: start center;
+    overflow-y: scroll;
+
+    @media screen and (max-width: 768px){
+        display: grid;
+    }
+
+}

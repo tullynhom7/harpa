@@ -1,0 +1,305 @@
+.mart-surface {
+    background: red !important;
+}
+
+.pieces-surface {
+
+    position: relative;
+
+    /* maybe delete */
+    user-select: none;
+
+    border: none;
+
+    /* m variables */
+    --surface-background-color-h: var(--h);
+    --surface-text-color-h: var(--h);
+    --surface-border-color-h: var(--h);
+
+    --surface-background-color-tema-and-tema-calc: var(--tema) var(--tema-calc);
+    --surface-text-color-tema-and-tema-calc: var(--tema) var(--tema-calc);
+    --surface-border-color-tema-and-tema-calc: var(--tema) var(--tema-calc);
+
+
+
+    /* m settings */
+    background: hsla(
+        var(--surface-background-color-h),
+        var(--s),
+        var(--surface-background-color),
+        var(--a)
+    );
+    color: hsla(
+        var(--surface-text-color-h),
+        var(--s),
+        var(--surface-text-color),
+        var(--a)
+    );
+    border-color: hsla(
+        var(--surface-border-color-h),
+        var(--s),
+        var(--surface-border-color),
+        var(--a)
+    );
+
+
+
+    &.icon-filled, &.icon-filled-active:has(input:checked) {
+        font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        ;
+    }
+
+
+
+    /* surface h background */
+    /* Primary | default / hover */
+    &.background-color-primary,
+    &.background-color-primary-hover:hover
+    {--surface-background-color-h: var(--primary);}
+    /* Secondary | default / hover */
+    &.background-color-secondary,
+    &.background-color-secondary-hover:hover
+    {--surface-background-color-h: var(--secondary);}
+    &.background-color-tertiary,
+    /* Tertiary | default / hover */
+    &.background-color-tertiary-hover:hover
+    {--surface-background-color-h: var(--tertiary);}
+
+    /* surface h background */
+    /* Primary | default / hover */
+    &.text-color-primary,
+    &.text-color-primary-hover:hover
+    {--surface-text-color-h: var(--primary);}
+    /* Secondary | default / hover */
+    &.text-color-secondary,
+    &.text-color-secondary-hover:hover
+    {--surface-text-color-h: var(--secondary);}
+    &.text-color-tertiary,
+    /* Tertiary | default / hover */
+    &.text-color-tertiary-hover:hover
+    {--surface-text-color-h: var(--tertiary);}
+
+    /* surface h text */
+    &.surface-text-color-primary {--surface-text-color-h: var(--primary);}
+    &.surface-text-color-secondary {--surface-text-color-h: var(--secondary);}
+    &.surface-text-color-tertiary {--surface-text-color-h: var(--tertiary);}
+
+    /* surface h border */
+    &.surface-border-color-primary {--surface-border-color-h: var(--primary);}
+    &.surface-border-color-secondary {--surface-border-color-h: var(--secondary);}
+    &.surface-border-color-tertiary {--surface-border-color-h: var(--tertiary);}
+
+
+
+    /* inverse reverse */
+    &.surface-background-color-inverse {--surface-background-color-tema-and-tema-calc: var(--tema-inverso) var(--tema-calc-inverso);}
+    &.surface-text-color-inverse {--surface-text-color-tema-and-tema-calc: var(--tema-inverso) var(--tema-calc-inverso);}
+    &.surface-border-color-inverse {--surface-border-color-tema-and-tema-calc: var(--tema-inverso) var(--tema-calc-inverso);}
+
+    /* &.surface-bg-reverse {--surface-bg-tema-tema-calc: var(--tema) var(--tema-calc);} */
+
+
+
+    /* ripple */
+    &.ripple-to-bg {--pieces-ripple: calc(var(--tema) var(--tema-calc) 52%);}
+    &.ripple-to-mg {--pieces-ripple: calc(var(--tema) var(--tema-calc) 52%);}
+    &.ripple-to-fg {--pieces-ripple: calc(var(--tema) var(--tema-calc) 80%);}
+    &.ripple-to-toned {--pieces-ripple: calc(var(--tema) var(--tema-calc) 80%);}
+    &.ripple-to-accent {--pieces-ripple: calc(var(--tema) var(--tema-calc) 0%);}
+    &.ripple-to-neutral {--pieces-ripple: calc(var(--tema) var(--tema-calc) 52%);}
+
+
+
+    /* background */
+    &.background-color-transparent {background: transparent;}
+    &.background-color-bg {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 4%);}
+    &.background-color-mg {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 12%);}
+    &.background-color-fg {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 20%);}
+    &.background-color-toned {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 28%);}
+    &.background-color-accent {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 52%);}
+    &.background-color-neutral {--surface-background-color: var(--tema);}
+
+    /* background hover */
+    &.background-color-hover-bg:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 4%);}
+    &.background-color-hover-mg:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 12%);}
+    &.background-color-hover-fg:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 20%);}
+    &.background-color-hover-toned:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 28%);}
+    &.background-color-hover-accent:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 52%);}
+    &.background-color-hover-neutral:hover {--surface-background-color: var(--tema);}
+
+    /* background hover (to)*/
+    &.background-color-hover-to-bg:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 8%);}
+    &.background-color-hover-to-mg:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 16%);}
+    &.background-color-hover-to-fg:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 24%);}
+    &.background-color-hover-to-toned:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 32%);}
+    &.background-color-hover-to-accent:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 56%);}
+    &.background-color-hover-to-neutral:hover {--surface-background-color: var(--tema);}
+
+
+    
+    /* text / icon */
+    &.text-color-bg {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 4%);}
+    &.text-color-mg {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 12%);}
+    &.text-color-fg {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 20%);}
+    &.text-color-toned {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 28%);}
+    &.text-color-accent {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 52%);}
+    &.text-color-neutral {--surface-text-color: var(--tema);}
+
+    &.text-color-to-bg {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 76% var(--tema-calc) 20%);}
+    &.text-color-to-mg {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 76% var(--tema-calc) 12%);}
+    &.text-color-to-fg {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 76% var(--tema-calc) 4%);}
+    &.text-color-to-toned {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 86% var(--tema-calc) 4%);}
+    &.text-color-to-accent {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 4% var(--tema-calc) 4%);}
+    &.text-color-to-neutral {--surface-text-color: var(--tema);}
+
+    /* text / icon hover */
+    &.text-color-hover-bg:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 8%);}
+    &.text-color-hover-mg:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 16%);}
+    &.text-color-hover-fg:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 24%);}
+    &.text-color-hover-toned:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 32%);}
+    &.text-color-hover-accent:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 56%);}
+    &.text-color-hover-neutral:hover {--surface-text-color: var(--tema);}
+
+    /* text / icon hover (to)*/
+    &.text-color-hover-to-bg:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 76% var(--tema-calc) 24%);}
+    &.text-color-hover-to-mg:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 76% var(--tema-calc) 16%);}
+    &.text-color-hover-to-fg:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 76% var(--tema-calc) 8%);}
+    &.text-color-hover-to-toned:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 86% var(--tema-calc) 8%);}
+    &.text-color-hover-to-accent:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 4% var(--tema-calc) 8%);}
+    &.text-color-hover-to-neutral:hover {--surface-text-color: var(--tema);}
+
+
+
+    /* border color */
+    &.border-color-bg {--surface-border-color: calc(var(--surface-border-color-tema-and-tema-calc) 4%);}
+    &.border-color-mg {--surface-border-color: calc(var(--surface-border-color-tema-and-tema-calc) 12%);}
+    &.border-color-fg {--surface-border-color: calc(var(--surface-border-color-tema-and-tema-calc) 20%);}
+    &.border-color-toned {--surface-border-color: calc(var(--surface-border-color-tema-and-tema-calc) 28%);}
+    &.border-color-toned-fix {--surface-border-color: calc(var(--surface-border-color-tema-and-tema-calc) 36%);}
+    &.border-color-accent {--surface-border-color: calc(var(--surface-border-color-tema-and-tema-calc) 60%);}
+    &.border-color-accent-fix {--surface-border-color: calc(var(--surface-border-color-tema-and-tema-calc) 52%);}
+
+    .surface-border-default {border-style: solid; border-width: 1px;}
+
+
+
+    &:has(>.surface-controller:checked), &:has(>.surface-controller:checked)>.surface-parent {
+
+        /* inverse reverse */
+        &.surface-background-color-inverse-active {--surface-background-color-tema-and-tema-calc: var(--tema-inverso) var(--tema-calc-inverso);}
+        &.surface-text-color-inverse-active {--surface-text-color-tema-and-tema-calc: var(--tema-inverso) var(--tema-calc-inverso);}
+        &.surface-border-color-inverse-active {--surface-border-color-tema-and-tema-calc: var(--tema-inverso) var(--tema-calc-inverso);}
+
+        /* surface h background */
+        &.surface-background-color-primary-active {--surface-background-color-h: var(--primary);}
+        &.surface-background-color-secondary-active {--surface-background-color-h: var(--secondary);}
+        &.surface-background-color-tertiary-active {--surface-background-color-h: var(--tertiary);}
+
+        /* surface h text */
+        &.surface-text-color-primary-active {--surface-text-color-h: var(--primary);}
+        &.surface-text-color-secondary-active {--surface-text-color-h: var(--secondary);}
+        &.surface-text-color-tertiary-active {--surface-text-color-h: var(--tertiary);}
+
+        /* surface h border */
+        &.surface-border-color-primary-active {--surface-border-color-h: var(--primary);}
+        &.surface-border-color-secondary-active {--surface-border-color-h: var(--secondary);}
+        &.surface-border-color-tertiary-active {--surface-border-color-h: var(--tertiary);}
+
+
+
+        /* ripple */
+        &.ripple-to-bg-active {--pieces-ripple: calc(var(--tema) var(--tema-calc) 52%);}
+        &.ripple-to-mg-active {--pieces-ripple: calc(var(--tema) var(--tema-calc) 52%);}
+        &.ripple-to-fg-active {--pieces-ripple: calc(var(--tema) var(--tema-calc) 80%);}
+        &.ripple-to-toned-active {--pieces-ripple: calc(var(--tema) var(--tema-calc) 80%);}
+        &.ripple-to-accent-active {--pieces-ripple: calc(var(--tema) var(--tema-calc) 0%);}
+        &.ripple-to-neutral-active {--pieces-ripple: calc(var(--tema) var(--tema-calc) 52%);}
+
+
+        
+        /* background */
+        &.background-color-transparent-active {background: transparent;}
+        &.background-color-bg-active {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 4%);}
+        &.background-color-mg-active {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 12%);}
+        &.background-color-fg-active {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 20%);}
+        &.background-color-toned-active {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 28%);}
+        &.background-color-accent-active {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 52%);}
+        &.background-color-neutral-active {--surface-background-color: var(--tema);}
+
+        /* background hover */
+        &.background-color-hover-bg-active:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 4%);}
+        &.background-color-hover-mg-active:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 12%);}
+        &.background-color-hover-fg-active:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 20%);}
+        &.background-color-hover-toned-active:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 28%);}
+        &.background-color-hover-accent-active:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 52%);}
+        &.background-color-hover-neutral-active:hover {--surface-background-color: var(--tema);}
+
+        /* background hover (to)*/
+        &.background-color-hover-to-bg-active:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 8%);}
+        &.background-color-hover-to-mg-active:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 16%);}
+        &.background-color-hover-to-fg-active:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 24%);}
+        &.background-color-hover-to-toned-active:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 32%);}
+        &.background-color-hover-to-accent-active:hover {--surface-background-color: calc(var(--surface-background-color-tema-and-tema-calc) 56%);}
+        &.background-color-hover-to-neutral-active:hover {--surface-background-color: var(--tema);}
+
+
+
+        /* text / icon */
+        &.text-color-bg-active {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 4%);}
+        &.text-color-mg-active {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 12%);}
+        &.text-color-fg-active {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 20%);}
+        &.text-color-toned-active {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 28%);}
+        &.text-color-accent-active {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 52%);}
+        &.text-color-neutral-active {--surface-text-color: var(--tema);}
+
+        &.text-color-to-bg-active {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 76% var(--tema-calc) 20%);}
+        &.text-color-to-mg-active {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 76% var(--tema-calc) 12%);}
+        &.text-color-to-fg-active {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 76% var(--tema-calc) 4%);}
+        &.text-color-to-toned-active {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 86% var(--tema-calc) 4%);}
+        &.text-color-to-accent-active {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 4% var(--tema-calc) 4%);}
+        &.text-color-to-neutral-active {--surface-text-color: var(--tema);}
+
+        /* text / icon hover */
+        &.text-color-hover-bg-active:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 8%);}
+        &.text-color-hover-mg-active:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 16%);}
+        &.text-color-hover-fg-active:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 24%);}
+        &.text-color-hover-toned-active:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 32%);}
+        &.text-color-hover-accent-active:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 56%);}
+        &.text-color-hover-neutral-active:hover {--surface-text-color: var(--tema);}
+
+        /* text / icon hover (to)*/
+        &.text-color-hover-to-bg-active:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 76% var(--tema-calc) 24%);}
+        &.text-color-hover-to-mg-active:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 76% var(--tema-calc) 16%);}
+        &.text-color-hover-to-fg-active:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 76% var(--tema-calc) 8%);}
+        &.text-color-hover-to-toned-active:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 86% var(--tema-calc) 8%);}
+        &.text-color-hover-to-accent-active:hover {--surface-text-color: calc(var(--surface-text-color-tema-and-tema-calc) 4% var(--tema-calc) 8%);}
+        &.text-color-hover-to-neutral-active:hover {--surface-text-color: var(--tema);}
+
+        /* border color */
+        &.border-color-bg-active {--surface-border-color: calc(var(--surface-border-color-tema-and-tema-calc) 4%);}
+        &.border-color-mg-active {--surface-border-color: calc(var(--surface-border-color-tema-and-tema-calc) 12%);}
+        &.border-color-fg-active {--surface-border-color: calc(var(--surface-border-color-tema-and-tema-calc) 20%);}
+        &.border-color-toned-active {--surface-border-color: calc(var(--surface-border-color-tema-and-tema-calc) 28%);}
+        &.border-color-toned-fix-active {--surface-border-color: calc(var(--surface-border-color-tema-and-tema-calc) 36%);}
+        &.border-color-accent-active {--surface-border-color: calc(var(--surface-border-color-tema-and-tema-calc) 60%);}
+        &.border-color-accent-fix-active {--surface-border-color: calc(var(--surface-border-color-tema-and-tema-calc) 52%);}
+
+        .surface-border-default-active {border-style: solid; border-width: 2px;}
+    }
+
+}
+
+.bg-dot {
+    background-image: radial-gradient(
+        circle at center,
+        hsla(var(--h),100%,48%,24%) 0%,
+        hsla(var(--h),100%,48%,24%) 16%,
+        transparent 1%
+    );
+    background-size: 8px 8px;
+    background-repeat: repeat;
+}

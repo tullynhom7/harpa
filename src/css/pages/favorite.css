@@ -2,6 +2,7 @@
     display: grid;
     overflow-y: scroll;
     gap: 1px;
+    align-content: start;
     .card-list {
         display: grid;
         padding: 16px;

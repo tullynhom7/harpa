@@ -18,25 +18,25 @@ harpa.pages
     const template = /*html*/`
         <label class="
             card-list
-            pieces-button
-            pieces-surface
-            background-color-bg
-            background-color-hover-to-bg
-            text-color-to-bg
-            background-color-mg-active
-            background-color-hover-to-mg-active
-            text-color-to-mg-active
+            piece-button
+            piece-surface
+            background-color-096
+            background-color-092-hover
+            text-color-004
+            background-color-088-active
+            background-color-084-hover-active
+            text-color-012-active
 
-            surface-text-color-secondary-active
-            surface-background-color-secondary-active
+            background-color-secondary-active
+            text-color-secondary-active
             
-            pieces-ripple-to-mg
-            icon-filled-active
+            ripple-color-048
+            piece-icon-active
         ">
-            <input id="nav-btn-${i}" type="radio" name="nav" value="${page.name}" class="surface-controller">
-            <span class="material-symbols-rounded icon" translate="no">${page.icon}</span>
-            <span class="label">${page.name}</span>
-            <span class="pieces-ripple secondary"></span>
+            <input id="nav-btn-${i}" type="radio" name="nav" value="${page.name}" class="piece-controller">
+            <span class="material-symbols-rounded piece-icon" translate="no">${page.icon}</span>
+            <span class="piece-label">${page.name}</span>
+            <span class="piece-ripple secondary"></span>
         </label>
     `
     document.querySelector(`#m-nav`).appendChild(tools.create(template))
@@ -46,7 +46,7 @@ document.querySelectorAll("#m-nav input").forEach(input=>{
         harpa.pages.filter(page=>page.name==input.value)[0].main()
     })
 })
-document.querySelector('#m-nav .pieces-button').click()
+document.querySelector('#m-nav .piece-button').click()
 
 document.addEventListener("click", (event)=>{
     if(event.target.classList.contains("presentation")) harpa.presentation.set(event.target.innerHTML)

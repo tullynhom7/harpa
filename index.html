@@ -19,7 +19,7 @@
 		<!-- <link rel="apple-touch-icon" sizes="114x114" href="lib/PWA/apple-touch-icon-iphone-retina-120x120.png"> -->
 		<!-- <link rel="apple-touch-icon" sizes="144x144" href="lib/PWA/apple-touch-icon-ipad-retina-152x152.png"> -->
 
-		<link rel="apple-touch-icon" sizes="16x16" href="src/PWA/ios/16.png">
+		<!-- <link rel="apple-touch-icon" sizes="16x16" href="src/PWA/ios/16.png">
 		<link rel="apple-touch-icon" sizes="20x20" href="src/PWA/ios/20.png">
 		<link rel="apple-touch-icon" sizes="29x29" href="src/PWA/ios/29.png">
 		<link rel="apple-touch-icon" sizes="32x32" href="src/PWA/ios/32.png">
@@ -44,7 +44,7 @@
 		<link rel="apple-touch-icon" sizes="192x192" href="src/PWA/ios/192.png">
 		<link rel="apple-touch-icon" sizes="256x256" href="src/PWA/ios/256.png">
 		<link rel="apple-touch-icon" sizes="512x512" href="src/PWA/ios/512.png">
-		<link rel="apple-touch-icon" sizes="1024x1024" href="src/PWA/ios/1024.png">
+		<link rel="apple-touch-icon" sizes="1024x1024" href="src/PWA/ios/1024.png"> -->
 
         <meta charset="UTF-8">
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -72,19 +72,79 @@
         <!-- Libs js CDN -->
         <!-- <style>* {box-shadow: 0 0 0 1px rgba(255,0,0,0.2);}</style> -->
     </head>
-    <body class="light triade pieces-surface background-color-bg text-color-to-bg">
-        <header id="m-header" class="pieces-surface">
+    <body class="light triade piece-surface background-color-096 text-color-004">
+        <header id="m-header" class="piece-surface">
             <div id="titulo">
                 <img src="src/android/play_store_512.png" width="48px" height="48px" style="border-radius:12px;">
                 <h1>Harpa Cristã</h1>
                 <h2>Início</h2>
             </div>
+            <div style="display:none;" class="
+                piece-search
+                piece-surface
+            ">
+                <label class="
+                    bar
+                    piece-surface
+                    surface-parent
+                    background-color-bg
+                    background-color-mg-active
+                    border-color-mg
+                    border-color-accent-active
+                    ripple-to-mg
+                ">
+                    <input type="text" placeholder="buscar">
+                    <button class="
+                        search
+                        piece-button
+                        piece-surface
+                        background-color-fg
+                        text-color-to-fg
+                        background-color-hover-to-fg
+                    ">
+                        <span class="piece-ripple"></span>
+                        <span class="material-symbols-rounded icon no-fill" translate="no">search</span>
+                    </button>
+                    <button class="
+                        piece-button
+                        piece-surface
+                        background-color-fg
+                        text-color-to-fg
+                        background-color-hover-to-fg
+                    ">
+                        <span class="piece-ripple"></span>
+                        <span class="material-symbols-rounded icon no-fill" translate="no">arrow_back</span>
+                    </button>
+                    <button class="
+                        clear
+                        piece-button
+                        piece-surface
+                        background-color-fg
+                        text-color-to-fg
+                        background-color-hover-to-fg
+                    ">
+                        <span class="piece-ripple"></span>
+                        <span class="material-symbols-rounded icon no-fill" translate="no">cancel</span>
+                    </button>
+                </label>
+                <div class="
+                    menu
+                    piece-surface
+                    surface-parent
+                    background-color-bg
+                    background-color-bg-active
+                    border-color-bg
+                    border-color-accent-active
+                    ripple-to-bg
+                    
+                "></div>
+            </div>
         </header>
-        <span id="m-divider-h" class="pieces-divider pieces-surface background-color-fg"></span>
+        <span id="m-divider-h" class="piece-divider piece-surface background-color-080"></span>
         <main id="m-main"></main>
-        <span id="m-divider-v-1" class="pieces-divider pieces-surface background-color-fg"></span>
+        <span id="m-divider-v-1" class="piece-divider piece-surface background-color-080"></span>
         <nav id="m-nav"></nav>
-        <span id="m-divider-v-2" class="pieces-divider pieces-surface background-color-fg"></span>
+        <span id="m-divider-v-2" class="piece-divider piece-surface background-color-080"></span>
         <aside id="m-aside"></aside>
         <style>
             #install_button {
@@ -101,9 +161,11 @@
                 }
             }
         </style>
-        <button id="install_button" class="
-            pieces-FAB small
-            pieces-surface
+        <button
+        style="display:none;"
+        id="install_button" class="
+            piece-FAB small
+            piece-surface
             background-color-accent
             background-color-hover-to-accent
             text-color-to-accent
@@ -111,7 +173,7 @@
         ">
             <span class="material-symbols-rounded icon install_mobile" translate="no">install_mobile</span>
             <span class="material-symbols-rounded icon install_desktop" translate="no">install_desktop</span>
-            <span class="pieces-ripple"></span>
+            <span class="piece-ripple"></span>
         </button>
         <!-- PWA | scripts -->
 		<script src="scripts.js"></script>

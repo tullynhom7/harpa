@@ -1,17 +1,30 @@
-.pieces-FAB {
+.piece-FAB {
     width: 56px;
     height: 56px;
+    height: 56px;
+    border-radius: 16px;
     display: grid;
     place-content: center;
-    border-radius: 16px;
-    cursor: var(--cursor-pointer);
+    border: none;
+    animation: fab-show-animation .3s;
     transition: .3s;
-    position: relative;
-    user-select: none;
+
     * {pointer-events: none;}
+
+    .piece-icon {
+        display: grid;
+        place-items: center;
+        font-size: 24px;
+    }
     &.small {
         width: 40px;
         height: 40px;
         border-radius: 12px;
+    }
+    &.large {
+        width: 96px;
+        height: 96px;
+        border-radius: 28px;
+        .piece-icon {font-size: 36px;}
     }
 }

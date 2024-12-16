@@ -8,7 +8,7 @@ harpa.pages.push({
         //m-main
         const mMain = document.querySelector(`#m-main`)
         mMain.innerHTML = `
-            <section id="page-config" class="pieces-surface bg"></section>
+            <section id="page-config" class="piece-surface"></section>
         `
 
         const mAside = document.querySelector(`#m-aside`)
@@ -53,7 +53,7 @@ harpa.pages.push({
                     }
                 }
             </style>
-            <div id="main-color" class="pieces-surface background-color-mg">
+            <div id="main-color" class="piece-surface background-color-088 text-color-012">
                 <h1>Cor Principal</h1>
                 <div id="sContainer">
                     <canvas id="slider" width="200" height="200"></canvas>
@@ -215,40 +215,40 @@ harpa.pages.push({
                     }
                 }
             </style>
-            <div id="tema" class="pieces-surface background-color-mg">
+            <div id="tema" class="piece-surface background-color-088 text-color-012">
                 <h1>Tema</h1>
                 <label id="tgg-mm" class="
-                    pieces-surface
+                    piece-surface
 
-                    background-color-fg
-                    background-color-hover-to-fg
+                    background-color-080
+                    background-color-076-hover
                     
-                    pieces-ripple-to-fg
+                    ripple-color-048
                 ">
-                    <span class="pieces-ripple"></span>
-                    <input type="checkbox" name="tema" class="surface-controller">
-                    <!-- <span class="pieces-surface surface-parent background-color-bg active-indicator"></span> -->
+                    <span class="piece-ripple"></span>
+                    <input type="checkbox" name="tema" class="piece-controller">
+                    <!-- <span class="piece-surface surface-parent background-color-bg active-indicator"></span> -->
                     <span class="
-                        pieces-surface
+                        piece-surface
                         surface-parent
                         label
-                        background-color-bg
-                        background-color-fg-active
-                        background-color-hover-to-bg
-                        background-color-hover-toned-active
-                        text-color-accent
-                        text-color-to-fg-active
+                        background-color-096
+                        background-color-080-active
+                        background-color-092-hover
+                        background-color-076-hover-active
+                        text-color-048
+                        text-color-024-active
                     ">Claro</span>
                     <span class="
-                        pieces-surface
+                        piece-surface
                         surface-parent
                         label
-                        background-color-fg
-                        background-color-bg-active
-                        background-color-hover-toned
-                        background-color-hover-to-bg-active
-                        text-color-accent-active
-                        text-color-to-fg
+                        background-color-080
+                        background-color-096-active
+                        background-color-076-hover
+                        background-color-092-hover-active
+                        text-color-024
+                        text-color-048-active
                     ">Escuro</span>
                 </label>
             </div>
@@ -311,7 +311,7 @@ harpa.pages.push({
                                 position: relative;
                                 overflow: hidden;
 
-                                &>span:not(.icon) {
+                                &>span:not(.piece-icon) {
                                     width: calc(80px - 10px);
                                     aspect-ratio: 1/1;
                                     display: grid;
@@ -338,7 +338,7 @@ harpa.pages.push({
                                 pointer-events: none;
                             }
 
-                            .icon {
+                            .piece-icon {
                                 border-radius: 100%;
                                 padding: 8px;
                                 width: min-content;
@@ -347,48 +347,48 @@ harpa.pages.push({
                                 opacity: 0;
                                 place-self: center;
                             }
-                            &:has(input:checked) .icon {opacity: 1;}
+                            &:has(input:checked) .piece-icon {opacity: 1;}
                         }
                     }
                 }
             </style>
-            <section id="paletas" class="pieces-surface background-color-mg">
+            <section id="paletas" class="piece-surface background-color-088 text-color-012">
                 <h1>Paleta</h1>
                 <div>
-                    <label class="analoga option pieces-surface background-color-hover-to-mg border-color-toned">
+                    <label class="analoga option piece-surface ripple-color-048">
                         <div class="colors">
-                            <span class="pieces-surface background-color-fg primary"></span>
-                            <span class="pieces-surface background-color-fg secondary"></span>
-                            <span class="pieces-surface background-color-fg tertiary"></span>
-                            <span class="material-symbols-rounded icon pieces-surface background-color-fg text-color-to-fg inverse" translate="no">done</span>
+                            <span class="piece-surface background-color-080 primary"></span>
+                            <span class="piece-surface background-color-080 secondary"></span>
+                            <span class="piece-surface background-color-080 tertiary"></span>
+                            <span class="material-symbols-rounded piece-icon piece-surface background-color-080 text-color-020 inverse" translate="no">done</span>
                         </div>
                         <span class="label">analoga</span>
-                        <input class="surface-controller" type="radio" name="paleta" value="analoga"/>
-                        <span class="pieces-ripple"></span>
+                        <input class="piece-controller" type="radio" name="paleta" value="analoga"/>
+                        <span class="piece-ripple"></span>
                     </label>
 
-                    <label class="triade option pieces-surface background-color-hover-to-mg border-color-toned">
+                    <label class="triade option piece-surface ripple-color-048">
                         <div class="colors">
-                            <span class="pieces-surface background-color-fg primary"></span>
-                            <span class="pieces-surface background-color-fg secondary"></span>
-                            <span class="pieces-surface background-color-fg tertiary"></span>
-                            <span class="material-symbols-rounded icon pieces-surface background-color-fg text-color-to-fg inverse" translate="no">done</span>
+                            <span class="piece-surface background-color-080 primary"></span>
+                            <span class="piece-surface background-color-080 secondary"></span>
+                            <span class="piece-surface background-color-080 tertiary"></span>
+                            <span class="material-symbols-rounded piece-icon piece-surface background-color-080 text-color-020 inverse" translate="no">done</span>
                         </div>
                         <span class="label">triade</span>
-                        <input class="surface-controller" type="radio" name="paleta" value="triade"/>
-                        <span class="pieces-ripple"></span>
+                        <input class="piece-controller" type="radio" name="paleta" value="triade"/>
+                        <span class="piece-ripple"></span>
                     </label>
 
-                    <label class="complementar option pieces-surface background-color-hover-to-mg border-color-toned">
+                    <label class="complementar option piece-surface ripple-color-048">
                         <div class="colors">
-                            <span class="pieces-surface background-color-fg primary"></span>
-                            <span class="pieces-surface background-color-fg secondary"></span>
-                            <span class="pieces-surface background-color-fg tertiary"></span>
-                            <span class="material-symbols-rounded icon pieces-surface background-color-fg text-color-to-fg inverse" translate="no">done</span>
+                            <span class="piece-surface background-color-080 primary"></span>
+                            <span class="piece-surface background-color-080 secondary"></span>
+                            <span class="piece-surface background-color-080 tertiary"></span>
+                            <span class="material-symbols-rounded piece-icon piece-surface background-color-080 text-color-020 inverse" translate="no">done</span>
                         </div>
                         <span class="label">complementar</span>
-                        <input class="surface-controller" type="radio" name="paleta" value="complementar"/>
-                        <span class="pieces-ripple"></span>
+                        <input class="piece-controller" type="radio" name="paleta" value="complementar"/>
+                        <span class="piece-ripple"></span>
                     </label>
                 </div>
             </section>
@@ -412,7 +412,7 @@ harpa.pages.push({
     font_size(id) {
         let templateFragment = /*html*/`
             <style>
-                .pieces-segmented-button {
+                .piece-segmented-button {
                     label {
                         cursor: var(--cursor-pointer);
                         padding: 8px 16px;
@@ -427,9 +427,9 @@ harpa.pages.push({
                     input {display: none;}
                 }
             </style>
-            <div id="tema" class="pieces-surface background-color-mg">
+            <div id="tema" class="piece-surface background-color-088 text-color-012">
                 <h1>Tamanho da fonte</h1>
-                <div id="font-size" style="display:flex;" class="pieces-segmented-button" class="pieces-surface background-color-mg"></div>
+                <div id="font-size" style="display:flex;" class="piece-segmented-button" class="piece-surface background-color-mg"></div>
             </div>
         `
         document.querySelector(id).appendChild(tools.create(templateFragment))
@@ -438,18 +438,18 @@ harpa.pages.push({
                     
             const template = `
                 <label class="
-                    pieces-surface
-                    background-color-mg
-                    background-color-hover-to-mg
-                    background-color-accent-active
-                    text-color-to-accent-active
-                    background-color-hover-to-accent-active
-                    border-color-fg
-                    ripple-to-accent
+                    piece-surface
+                    background-color-088
+                    background-color-084-hover
+                    background-color-048-active
+                    text-color-100-active
+                    background-color-044-hover-active
+                    border-color-080
+                    ripple-color-100
                 ">
-                    <input class="surface-controller" type="radio" name="font-size" value="${i+1}">
+                    <input class="piece-controller" type="radio" name="font-size" value="${i+1}">
                     <span class="label">${size}</span>
-                    <span class="pieces-ripple"></span>
+                    <span class="piece-ripple"></span>
                 </label>
             `
             document.querySelector("#font-size").appendChild(tools.create(template))
@@ -464,10 +464,5 @@ harpa.pages.push({
                 harpa.fontSize.set(input.value)
             })
         })
-        // let fs = document.querySelector("#font-size")
-        // fs.addEventListener('input', ()=>{
-        //     document.querySelector("html").style.setProperty('--font-size', fs.value)
-        //     harpa.fontSize.set(fs.value)
-        // })
     }
 })

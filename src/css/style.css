@@ -17,10 +17,11 @@ body {
         grid-template-columns: auto 1fr;
         align-items: center;
         justify-items: end;
-        padding: 16px;
+        padding-inline: 16px;
         height: 80px;
         position: sticky;
         top: 0;
+        z-index: 100;
 
         #titulo {
 
@@ -81,6 +82,7 @@ body {
         display: grid;
         grid-area: m-aside;
         overflow: hidden;
+        z-index: 3;
     }
 }
 
@@ -96,6 +98,7 @@ body {
             'm-divider-v-1'
             'm-nav'
         ;
+        #m-header {z-index: 0;}
 
         #m-divider-v-2 {display: none;}
         #m-aside {display: none;}

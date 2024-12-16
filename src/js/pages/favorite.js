@@ -9,7 +9,7 @@ harpa.pages.push({
         const mMain = document.querySelector(`#m-main`)
         //inserir m-layout da pagina
         mMain.innerHTML = /*html*/`
-            <section id="page-favorite" class="pieces-surface background-color-fg pieces-ripple-to-accent"></section>
+            <section id="page-favorite" class="piece-surface background-color-080 piece-ripple-to-accent"></section>
         `
 
         const mAside = document.querySelector(`#m-aside`)
@@ -21,7 +21,7 @@ harpa.pages.push({
                     gap: 16px;
                     place-self: center;
                     place-items: center;
-                    .icon {
+                    .piece-icon {
                         font-size: 48px;
                         width: 100px;
                         height: 100px;
@@ -33,7 +33,7 @@ harpa.pages.push({
                 }
             </style>
             <div id="empty">
-                <span class="material-symbols-rounded icon pieces-surface background-color-fg text-color-to-fg" translate="no">fmd_bad</span>
+                <span class="material-symbols-rounded piece-icon piece-surface background-color-080 text-color-to-080" translate="no">fmd_bad</span>
                 <span class="label">Nenhuma letra favorita selecionada!</span>
             </div>
         `
@@ -50,18 +50,18 @@ harpa.pages.push({
                     value="${numero}"
                     class="
                         card-list
-                        pieces-surface
-                        background-color-bg
-                        background-color-hover-to-bg
-                        pieces-ripple-to-bg
+                        piece-surface
+                        background-color-096
+                        background-color-hover-to-096
+                        piece-ripple-to-096
                     "
                 >
-                    <span class="numero pieces-surface background-color-mg text-color-to-mg tertiary">${numero}</span>
+                    <span class="numero piece-surface background-color-088 text-color-012 tertiary">${numero}</span>
                     <span class="nome">${nome}</span>
-                    <span class="letra pieces-surface background-color-mg text-color-to-mg secondary">
+                    <span class="letra piece-surface background-color-088 text-color-012 secondary">
                         <p>${letra.split("#")[0].replace(/^\d+/,"").split("@").join("</p><p>")}</p>
                     </span>
-                    <span class="pieces-pieces-ripple"></span>
+                    <span class="piece-piece-ripple"></span>
                 </button>
             `
             fragment.appendChild(tools.create(card))
@@ -69,10 +69,13 @@ harpa.pages.push({
         document.querySelector(`#page-favorite`).appendChild(fragment)
 
         //adicionar função de carregar letra ao clicar no botão
-        document.querySelectorAll(`.card-list`).forEach(button=>button.addEventListener('click', ()=>{
-            this.showLyric(button.value)
-            mAside.classList.add('display-grid')
-        }))
+        document.querySelector('#page-favorite').addEventListener('click', e => {
+            if (e.target.classList.contains('card-list')) {
+                this.showLyric(e.target.value)
+                mAside.classList.add('display-grid')
+            }
+        })
+
     },
     showLyric(numero_do_hino) {
 
@@ -87,36 +90,36 @@ harpa.pages.push({
         document.querySelector("#popover-modal")
         const mAside = document.querySelector(`#m-aside`)
         mAside.innerHTML = `
-            <section id="popover-letra" class="pieces-surface bg">
+            <section id="popover-letra" class="piece-surface 096">
                 <header>
-                    <span class="numero pieces-surface background-color-mg text-color-to-mg tertiary">${numero}</span>
+                    <span class="numero piece-surface background-color-088 text-color-012 tertiary">${numero}</span>
                     <span class="nome">${nome}</span>
-                    <button id="close" popovertarget="popover-modal" class="pieces-button pieces-surface background-color-mg text-color-to-mg background-color-hover-to-mg secondary">
-                        <span class="material-symbols-rounded icon" translate="no">close</span>
-                        <span class="pieces-ripple"></span>
+                    <button id="close" popovertarget="popover-modal" class="piece-button piece-surface background-color-088 text-color-012 background-color-hover-to-088 secondary">
+                        <span class="material-symbols-rounded piece-icon" translate="no">close</span>
+                        <span class="piece-ripple"></span>
                     </button>
                 </header>
                 <main></main>
                 <footer>
-                    <button id="prev" class="pieces-button pieces-surface background-color-mg text-color-to-mg background-color-hover-to-mg">
-                        <span class="material-symbols-rounded icon" translate="no">arrow_left_alt</span>
-                        <span class="pieces-ripple"></span>
+                    <button id="prev" class="piece-button piece-surface background-color-088 text-color-012 background-color-hover-to-088">
+                        <span class="material-symbols-rounded piece-icon" translate="no">arrow_left_alt</span>
+                        <span class="piece-ripple"></span>
                     </button>
                     <button id="fav" class="
-                        pieces-FAB
-                        pieces-surface
-                        background-color-fg
-                        background-color-hover-to-fg
-                        text-color-to-fg
-                        ripple-to-fg
+                        piece-FAB
+                        piece-surface
+                        background-color-080
+                        background-color-hover-to-080
+                        text-color-to-080
+                        ripple-to-080
                         ${favorito}
                     ">
-                        <span class="material-symbols-rounded icon" translate="no">favorite</span>
-                        <span class="pieces-ripple"></span>
+                        <span class="material-symbols-rounded piece-icon" translate="no">favorite</span>
+                        <span class="piece-ripple"></span>
                     </button>
-                    <button id="next" class="pieces-button pieces-surface background-color-mg text-color-to-mg background-color-hover-to-mg">
-                        <span class="material-symbols-rounded icon" translate="no">arrow_right_alt</span>
-                        <span class="pieces-ripple"></span>
+                    <button id="next" class="piece-button piece-surface background-color-088 text-color-012 background-color-hover-to-088">
+                        <span class="material-symbols-rounded piece-icon" translate="no">arrow_right_alt</span>
+                        <span class="piece-ripple"></span>
                     </button>
                 </footer>
             </section>
@@ -134,8 +137,8 @@ harpa.pages.push({
             if (/^\d+/.test(versos[i])) {
 
                 let template = `
-                    <div class='pieces-surface bg card presentation'>
-                        <p class='pieces-surface background-color-mg text-color-to-mg '>${versos[i].replace(/^\d+/,"").replace("@","").split("@").join("</p><p class='pieces-surface background-color-mg text-color-to-mg '>")}</p>
+                    <div class='piece-surface 096 card presentation'>
+                        <p class='piece-surface background-color-088 text-color-012 '>${versos[i].replace(/^\d+/,"").replace("@","").split("@").join("</p><p class='piece-surface background-color-088 text-color-012 '>")}</p>
                     </div>
                 `
 
@@ -143,7 +146,7 @@ harpa.pages.push({
                 if(versos.filter(v=>!/^\d+/.test(v))[0]) {
                     template += `
                         <div>
-                            <p class='pieces-surface background-color-mg text-color-to-mg tertiary'>${versos.filter(v=>!/^\d+/.test(v))[0].split("@").join("</p><p class='pieces-surface background-color-mg text-color-to-mg tertiary'>")}</p>
+                            <p class='piece-surface background-color-088 text-color-012 tertiary'>${versos.filter(v=>!/^\d+/.test(v))[0].split("@").join("</p><p class='piece-surface background-color-088 text-color-012 tertiary'>")}</p>
                         </div>
                     `
                 }

@@ -77,7 +77,7 @@
                 &:last-of-type {border-radius: 8px 8px  32px 32px;}
             }
             &>* {
-                pointer-events: none;
+                /* pointer-events: none; */
             }
         }
     }

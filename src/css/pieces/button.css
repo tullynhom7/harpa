@@ -1,9 +1,10 @@
-.pieces-button {
+.piece-button {
     
     min-width: 40px;
     height: 40px;
     border-radius: 40px;
     box-sizing: border-box;
+    border: none;
 
     display: grid;
     grid-auto-flow: column;
@@ -12,78 +13,30 @@
     place-content: center;
     place-items: center;
 
-    cursor: pointer;
     transition:
         background 0.3s ease,
         border-radius 0.1s ease
     ;
     position: relative;
 
-    input {display:none;}
+    input {display: none;}
 
     :where(*, * *) {
         pointer-events: none;
         user-select: none;
     }
 
-    .label {
+    .piece-label {
         display: grid;
         place-content: center;
-        font-weight: 500;
+        font-weight: 600;
     }
 
-    &:has(.icon):not(:has(.label)) {
+    &:has(.piece-icon):not(:has(.piece-label)) {
         padding: 0;
         border-radius: 100%;
         aspect-ratio: 1/1;
     }
 
-    &:has(.label):not(:has(.icon)) { padding: 0 16px;}
-
-    cursor: var(--cursor-pointer);
-
-    .material-symbols-rounded { pointer-events: none;}
-
-}
-
-.gradient {
-    --h-p: var(--primary);
-    --h-s: var(--secondary);
-    --h-t: var(--tertiary);
-
-
-
-    &.surface {
-        background-image:
-            linear-gradient(
-                75deg,
-                hsla(var(--h-p),var(--s),calc(var(--tema) var(--tema-calc) 20%),var(--a)),
-                hsla(var(--h-s),var(--s),calc(var(--tema) var(--tema-calc) 12%),var(--a)),
-                hsla(var(--h-t),var(--s),calc(var(--tema) var(--tema-calc) 4%),var(--a))
-            )
-        ;
-        
-    }
-
-    &.accent {
-        background-image:
-            linear-gradient(
-                75deg,
-                hsla(var(--h-p),var(--s),48%,var(--a)),
-                hsla(var(--h-s),var(--s),48%,var(--a)),
-                hsla(var(--h-t),var(--s),48%,var(--a))
-            )
-        ;
-    }
-
-    &.toned {
-        background-image:
-            linear-gradient(
-                75deg,
-                hsla(var(--h-p),var(--s),calc(var(--tema) var(--tema-calc) 28%),var(--a)),
-                hsla(var(--h-s),var(--s),calc(var(--tema) var(--tema-calc) 28%),var(--a)),
-                hsla(var(--h-t),var(--s),calc(var(--tema) var(--tema-calc) 28%),var(--a))
-            )
-        ;
-    }
+    &:has(.piece-label):not(:has(.piece-icon)) { padding: 0 16px;}
 }

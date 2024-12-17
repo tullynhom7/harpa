@@ -1,12 +1,12 @@
 {
+	"id": "/harpa/index.html",
 	"name": "Harpa Cristã",
 	"short_name": "Harpa",
-	"lang": "pt-br",
 	"start_url": "/harpa/index.html",
 	"scope": "/harpa/",
 	"display": "standalone",
-	"theme_color": "#ffffff",
-	"background_color": "#f8f9fa",
+	"background_color": "#FFFFFF",
+	"theme_color": "#FFFFFF",
 	"icons": [
 		{
 			"src": "src/PWA/windows11/SmallTile.scale-100.png",
@@ -707,5 +707,11 @@
 			"rel": "apple-touch-icon"
 		}
 	],
-	"prefer_related_applications": false
+	"prefer_related_applications": false,
+	"related_applications": [],
+	"ios": {
+		"apple-mobile-web-app-title": "Harpa Cristã",
+		"apple-mobile-web-app-status-bar-style": "default",
+		"apple-touch-icon": "/harpa/src/PWA/ios/apple-icon-180x180.png"
+	}
 }

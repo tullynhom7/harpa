@@ -18,7 +18,7 @@ harpa.pages
     const template = /*html*/`
         <label class="
             card-list
-            piece-button
+            piece-nav-button
             piece-surface
             background-color-096
             background-color-092-hover
@@ -46,7 +46,7 @@ document.querySelectorAll("#m-nav input").forEach(input=>{
         harpa.pages.filter(page=>page.name==input.value)[0].main()
     })
 })
-document.querySelector('#m-nav .piece-button').click()
+document.querySelector('#m-nav .piece-nav-button').click()
 
 document.addEventListener("click", (event)=>{
     if(event.target.classList.contains("presentation")) harpa.presentation.set(event.target.innerHTML)

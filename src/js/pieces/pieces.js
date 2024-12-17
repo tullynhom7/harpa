@@ -54,6 +54,24 @@ properties.forEach(property=>{
     }
 })
 
+const piece_h = [
+    "&.property-color-000",
+    "&.property-color-000-hover:hover",
+    "&.piece-actived.property-color-000-active",
+    "&.piece-actived.property-color-000-hover-active:hover",
+    "&.property-color-000-active:has(.piece-controller:checked)",
+    "&:has(.piece-controller:checked)>.piece-parent.property-color-000-active",
+    "&.property-color-000-hover-active:has(.piece-controller:checked):hover"
+]
+
+properties.forEach(property=>{
+    // Gera as regras CSS dinamicamente e adiciona ao <style>
+    const colors = ["primary","secondary","tertiary"]
+    colors.forEach(color=>{
+        const cssRule = `.piece-surface { ${piece.join(", ").replaceAll("property", property).replaceAll("000", color)} { --piece-${property}-color-h: var(--${color}); }}`
+        style.appendChild(document.createTextNode(cssRule + "\n"))
+    })
+})
 
 //importar a fonte de icones do Google
 var googleIcons = document.createElement('style');

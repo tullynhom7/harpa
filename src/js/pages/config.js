@@ -50,6 +50,7 @@ harpa.pages.push({
                         font-family: Arial, sans-serif;
                         font-size: 16px;
                         font-weight: 900;
+                        user-select: none;
                     }
                 }
             </style>
@@ -355,7 +356,7 @@ harpa.pages.push({
             <section id="paletas" class="piece-surface background-color-088 text-color-012">
                 <h1>Paleta</h1>
                 <div>
-                    <label class="analoga option piece-surface ripple-color-048">
+                    <label class="analoga option piece-surface ripple-color-048 border-color-064">
                         <div class="colors">
                             <span class="piece-surface background-color-080 primary"></span>
                             <span class="piece-surface background-color-080 secondary"></span>
@@ -367,7 +368,7 @@ harpa.pages.push({
                         <span class="piece-ripple"></span>
                     </label>
 
-                    <label class="triade option piece-surface ripple-color-048">
+                    <label class="triade option piece-surface ripple-color-048 border-color-064">
                         <div class="colors">
                             <span class="piece-surface background-color-080 primary"></span>
                             <span class="piece-surface background-color-080 secondary"></span>
@@ -379,7 +380,7 @@ harpa.pages.push({
                         <span class="piece-ripple"></span>
                     </label>
 
-                    <label class="complementar option piece-surface ripple-color-048">
+                    <label class="complementar option piece-surface ripple-color-048 border-color-064">
                         <div class="colors">
                             <span class="piece-surface background-color-080 primary"></span>
                             <span class="piece-surface background-color-080 secondary"></span>

@@ -35,21 +35,6 @@
         var(--a)
     );
 
-    /* surface h background */
-    &.background-color-primary {--piece-background-color-h: var(--primary);}
-    &.background-color-secondary {--piece-background-color-h: var(--secondary);}
-    &.background-color-tertiary {--piece-background-color-h: var(--tertiary);}
-
-    /* surface h text */
-    &.text-color-primary {--piece-text-color-h: var(--primary);}
-    &.text-color-secondary {--piece-text-color-h: var(--secondary);}
-    &.text-color-tertiary {--piece-text-color-h: var(--tertiary);}
-
-    /* surface h border */
-    &.border-color-primary {--piece-border-color-h: var(--primary);}
-    &.border-color-secondary {--piece-border-color-h: var(--secondary);}
-    &.border-color-tertiary {--piece-border-color-h: var(--tertiary);}
-
 }
 
 .bg-dot {

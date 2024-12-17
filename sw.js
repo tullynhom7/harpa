@@ -9,25 +9,25 @@ self.addEventListener("install", event => {
 });
 
 self.addEventListener("activate", event => {
-    // delete any unexpected caches
+    // Delete caches que não correspondem ao atual
     event.waitUntil(
         caches
-        .keys()
-        .then(keys => keys.filter(key => key !== CACHE_NAME))
-        .then(keys =>
-            Promise.all(
-                keys.map(key => {
-                    console.log(`Deleting cache ${key}`);
-                    return caches.delete(key);
-                })
+            .keys()
+            .then(keys => keys.filter(key => key !== CACHE_NAME))
+            .then(keys =>
+                Promise.all(
+                    keys.map(key => {
+                        console.log(`Deleting cache ${key}`);
+                        return caches.delete(key);
+                    })
+                )
             )
-        )
     );
 });
 
 function cache(request, response) {
     if (response.type === "error" || response.type === "opaque") {
-        return Promise.resolve(); // do not put in cache network errors
+        return Promise.resolve(); // Não armazena erros de rede
     }
 
     return caches
@@ -35,75 +35,69 @@ function cache(request, response) {
         .then(cache => cache.put(request, response.clone()));
 }
 
-// It was used to fake update response and test it.
-// const delay = ms => _ => new Promise(resolve => setTimeout(() => resolve(_), ms))
-//  + `?per_page=${Math.ceil(Math.random() * 10)}`
-// .then(delay(8000))
-
 function update(request) {
     return fetch(request.url)
-        .then(
-            response =>
-            cache(request, response) // we can put response in cache
-            .then(() => response) // resolve promise with the Response object
+        .then(response =>
+            cache(request, response) // Salva no cache
+                .then(() => response) // Retorna a resposta da rede
         );
 }
 
 function refresh(response) {
-    return response
-        .json() // read and parse JSON response
-        .then(jsonResponse => {
-            self.clients.matchAll().then(clients => {
-                clients.forEach(client => {
-                    // report and send new data to client
+    return response.json().then(jsonResponse => {
+        self.clients.matchAll({ includeUncontrolled: true }).then(clients => {
+            clients.forEach(client => {
+                // Verifica se o cliente está visível antes de enviar mensagem
+                if (client.visibilityState === 'visible') {
                     client.postMessage(
                         JSON.stringify({
                             type: response.url,
                             data: jsonResponse.data
                         })
                     );
-                });
+                }
             });
-            return jsonResponse.data; // resolve promise with new data
         });
+        return jsonResponse.data; // Retorna os dados para o Service Worker
+    });
 }
 
 self.addEventListener("fetch", event => {
-
     if (event.request.url.includes("/api/")) {
-        // response to API requests, Cache Update Refresh strategy
+        // Resposta para API: estratégia Cache Update Refresh
         event.respondWith(caches.match(event.request));
         event.waitUntil(update(event.request).then(refresh));
     } else {
-        // response to static files requests, Cache-First strategy
+        // Resposta para arquivos estáticos: Cache First
         event.respondWith(
             caches
-            .match(event.request) // check if the request has already been cached
-            .then(cached => cached || fetch(event.request)) // otherwise request network
-            .then(
-                response =>
-                cache(event.request, response) // put response in cache
-                .then(() => response) // resolve promise with the network response
-            )
+                .match(event.request)
+                .then(cached => cached || fetch(event.request))
+                .then(response =>
+                    cache(event.request, response).then(() => response)
+                )
         );
     }
 });
 
-
-// sync event 
-self.addEventListener('sync', function (event) {
-    console.log("sync event", event);
-    if (event.tag === 'syncAttendees') {
-        event.waitUntil(syncAttendees()); // sending sync request
-    }
-});
+// Verifica se Background Sync é suportado
+if ("sync" in self.registration) {
+    self.addEventListener("sync", function (event) {
+        console.log("Sync event", event);
+        if (event.tag === "syncAttendees") {
+            event.waitUntil(syncAttendees());
+        }
+    });
+}
 
 function syncAttendees() {
     return update({
-            url: `https://reqres.in/api/users`
-        })
+        url: `https://reqres.in/api/users`
+    })
         .then(refresh)
-        .then((attendees) => self.registration.showNotification(
-            `${attendees.length} attendees to the PWA Workshop`
-        ))
+        .then(attendees =>
+            self.registration.showNotification(
+                `${attendees.length} attendees to the PWA Workshop`
+            )
+        );
 }

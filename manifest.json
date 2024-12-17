@@ -3,7 +3,10 @@
 	"short_name": "Harpa",
 	"lang": "pt-br",
 	"start_url": "/harpa/index.html",
+	"scope": "/harpa/",
 	"display": "standalone",
+	"theme_color": "#ffffff",
+	"background_color": "#f8f9fa",
 	"icons": [
 		{
 			"src": "src/PWA/windows11/SmallTile.scale-100.png",

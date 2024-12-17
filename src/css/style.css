@@ -61,10 +61,10 @@ body {
         padding: 16px;
         align-content: start;
 
-        .pieces-button {
+        .piece-nav-button {
             padding: 16px;
             grid-template-columns: auto 1fr;
-            .label{justify-self: start;}
+            .piece-label{justify-self: start;}
         }
     }
 
@@ -107,10 +107,10 @@ body {
             height: 80px;
             grid-auto-flow: column;
 
-            .pieces-button {
+            .piece-nav-button {
                 padding: 8px;
                 grid-template-columns: 1fr;
-                .label {
+                .piece-label {
                     display: none;
                 }
             }

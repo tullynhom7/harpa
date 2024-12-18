@@ -49,6 +49,45 @@ body {
                 align-self: start;
             }
         }
+        .menu {
+            padding: 16px;
+            gap: 16px;
+            overflow: hidden;
+            header {
+                display: grid;
+                align-items: center;
+                height: 40px;
+                padding-inline: 16px;
+                font-weight: 600;
+            }
+            section {
+                overflow: hidden;
+                padding: 16px;
+                border-radius: 16px;
+                border-width: 1px;
+                border-style: solid;
+                header {font-weight: 900; font-size: 16px;}
+            }
+            #numero {
+                & ul {
+                    display: grid;
+                    gap: 16px;
+                    grid-auto-flow: column;
+                    padding: 0 16px 16px 16px;
+                    overflow-x: scroll;
+                    label {
+                        min-width: 100px;
+                        height: 100px;
+                        font-size: 32px;
+                        display: grid;
+                        place-items: center;
+                        list-style: none;
+                        user-select: none;
+                        border-radius: 16px;
+                    }
+                }
+            }
+        }
     }
 
     #m-divider-h {grid-area: m-divider-h;}
@@ -98,10 +137,40 @@ body {
             'm-divider-v-1'
             'm-nav'
         ;
-        #m-header {z-index: 0;}
+        #m-header {
+            .piece-search {
+                &:not(.piece-actived) {
+                    width: min-content;
+                    justify-self: end;
+                    label {
+                        border: 0;
+                        padding: 0;
+                        :not(.search, .search *) {
+                            display: none;
+                        }
+                    }
+                }
+                &.piece-actived {
+                    width: 100%;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    label {
+                        padding: 8px;
+                        border-radius: 0;
+                        .close {order: -1;}
+                    }
+                    .search {display: none;}
+                    .menu {
+                        height: calc(100vh - 56px);
+                        border-radius: 0;
+                    }
+                }
+            }
+        }
 
         #m-divider-v-2 {display: none;}
-        #m-aside {display: none;}
+        #m-aside {display: none;z-index: 101;}
 
         #m-nav {
             height: 80px;

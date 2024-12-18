@@ -35,7 +35,9 @@ const piece = [
     "&.piece-actived.property-color-000-hover-active:hover",
     "&.property-color-000-active:has(.piece-controller:checked)",
     "&:has(.piece-controller:checked)>.piece-parent.property-color-000-active",
-    "&.property-color-000-hover-active:has(.piece-controller:checked):hover"
+    "&.property-color-000-hover-active:has(.piece-controller:checked):hover",
+    "&.piece-actived>.piece-parent.property-color-000-active",
+    "&.piece-actived>.piece-parent.property-color-000-hover-active:hover",
 ];
 
 const properties = [
@@ -89,14 +91,14 @@ function create(html) {
 }
 
 document.addEventListener('click', (event) => {
-    const pieces_SearchElements = document.querySelectorAll('.pieces-search')
+    const pieces_SearchElements = document.querySelectorAll('.piece-search')
 
     pieces_SearchElements.forEach(pieces_SearchElement => {
         const menu = pieces_SearchElement
 
         if(event.target === pieces_SearchElement || pieces_SearchElement.contains(event.target)) {
             // Se o clique ocorreu dentro de pieces-search
-            menu.classList.add('pieces-actived')
+            menu.classList.add('piece-actived')
 
             if(event.target.classList.contains('close')) {
                 pieces_SearchElement.querySelector('.bar input').value = ""
@@ -108,7 +110,7 @@ document.addEventListener('click', (event) => {
             }
         } else {
             // Se o clique ocorreu fora de pieces_search
-            menu.classList.remove('pieces-actived')
+            menu.classList.remove('piece-actived')
         }
         
     })

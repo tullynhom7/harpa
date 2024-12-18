@@ -77,65 +77,68 @@
                 <h1>Harpa Cristã</h1>
                 <h2>Início</h2>
             </div>
-            <div style="display:none;" class="
+            <div class="
                 piece-search
                 piece-surface
             ">
                 <label class="
                     bar
                     piece-surface
-                    surface-parent
-                    background-color-bg
-                    background-color-mg-active
-                    border-color-mg
-                    border-color-accent-active
-                    ripple-to-mg
+                    piece-parent
+                    border-color-048
+                    box-shadow-color-044-active
                 ">
-                    <input type="text" placeholder="buscar">
+                    <input id="m-search" type="text" placeholder="buscar">
                     <button class="
                         search
                         piece-button
                         piece-surface
-                        background-color-fg
-                        text-color-to-fg
-                        background-color-hover-to-fg
+                        background-color-080
+                        text-color-to-0820
+                        background-color-hover-to-076
                     ">
                         <span class="piece-ripple"></span>
-                        <span class="material-symbols-rounded icon no-fill" translate="no">search</span>
+                        <span class="material-symbols-rounded piece-icon no-fill" translate="no">search</span>
                     </button>
                     <button class="
+                        close
                         piece-button
                         piece-surface
-                        background-color-fg
-                        text-color-to-fg
-                        background-color-hover-to-fg
+                        background-color-080
+                        text-color-to-0820
+                        background-color-hover-to-076
                     ">
                         <span class="piece-ripple"></span>
-                        <span class="material-symbols-rounded icon no-fill" translate="no">arrow_back</span>
+                        <span class="material-symbols-rounded piece-icon no-fill" translate="no">arrow_back</span>
                     </button>
                     <button class="
                         clear
                         piece-button
                         piece-surface
-                        background-color-fg
-                        text-color-to-fg
-                        background-color-hover-to-fg
+                        background-color-080
+                        text-color-to-0820
+                        background-color-hover-to-076
                     ">
                         <span class="piece-ripple"></span>
-                        <span class="material-symbols-rounded icon no-fill" translate="no">cancel</span>
+                        <span class="material-symbols-rounded piece-icon no-fill" translate="no">cancel</span>
                     </button>
                 </label>
                 <div class="
                     menu
                     piece-surface
-                    surface-parent
-                    background-color-bg
-                    background-color-bg-active
-                    border-color-bg
-                    border-color-accent-active
-                    ripple-to-bg
-                    
-                "></div>
+                    piece-parent
+                    background-color-096
+                    box-shadow-color-044
+                ">
+                    <section id="numero" class="piece-surface border-color-088">
+                        <header>Resultados por número</header>
+                        <ul></ul>
+                    </section>
+                    <section id="letra" class="piece-surface border-color-088">
+                        <header>Resultados por Letra</header>
+                        <ul></ul>
+                    </section>
+                </div>
             </div>
         </header>
         <span id="m-divider-h" class="piece-divider piece-surface background-color-080"></span>
@@ -175,5 +178,35 @@
         </button>
         <!-- PWA | scripts -->
 		<script src="scripts.js"></script>
+        <script>
+
+            const fragment = document.createDocumentFragment()
+
+            document.querySelector("#m-header #m-search").addEventListener('input', (event)=>{
+                let input = event.target.value
+
+                document.querySelector("#numero ul").innerHTML = ""
+                if(+input) {
+                    db.filter(({numero})=>+numero.includes(+input))
+                    .forEach(resultado=> {
+
+                        const template = `
+                            <label class="piece-surface background-color-088 text-color-012 tertiary">
+                                ${resultado.numero}
+                                <span class="piece-ripple"></span>
+                            </label>
+                        `
+                        fragment.appendChild(tools.create(template))
+
+                    })
+                    document.querySelector("#numero ul").appendChild(fragment)
+                    document.querySelectorAll("#numero ul label").forEach(result=>{
+                        result.addEventListener("click", (event)=>{
+                            document.querySelectorAll(`#page-home button`)[result.innerText-1].click()
+                        })
+                    })
+                }
+            })
+        </script>
     </body>
 </html>

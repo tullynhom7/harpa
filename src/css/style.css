@@ -11,6 +11,10 @@ body {
         'm-nav m-divider-v-1 m-main m-divider-v-2 m-aside'
     ;
 
+    &:not(:has(#page-home)) {
+        .piece-search {display: none;}
+    }
+
     #m-header {
         display: grid;
         grid-area: m-header;
@@ -49,7 +53,14 @@ body {
                 align-self: start;
             }
         }
+        .piece-search.piece-actived {
+            &>label {
+                border-style: none none solid none;
+            }
+        }
+        .close {display: none;}
         .menu {
+            align-content: start;
             padding: 16px;
             gap: 16px;
             overflow: hidden;
@@ -62,7 +73,6 @@ body {
             }
             section {
                 overflow: hidden;
-                padding: 16px;
                 border-radius: 16px;
                 border-width: 1px;
                 border-style: solid;
@@ -155,15 +165,21 @@ body {
                     position: fixed;
                     top: 0;
                     left: 0;
-                    label {
-                        padding: 8px;
+                    &>label {
+                        border-style: none none solid none;
+                        border-bottom-width: 1px;
+                        box-shadow: none;
+                        height: 80px;
+                        padding: 16px;
                         border-radius: 0;
                         .close {order: -1;}
                     }
                     .search {display: none;}
+                    .close {display: grid;}
                     .menu {
                         height: calc(100vh - 56px);
                         border-radius: 0;
+                        box-shadow: none;
                     }
                 }
             }

@@ -50,6 +50,10 @@ harpa.pages.push({
                         piece-surface
                         background-color-096
                         background-color-092-hover
+                        background-color-088-active
+                        background-color-084-hover-active
+                        background-color-secondary-active
+                        text-color-secondary-active
                         ripple-color-048
                     "
                 >
@@ -67,6 +71,8 @@ harpa.pages.push({
             if (e.target.classList.contains('card-list')) {
                 this.showLyric(e.target.value)
                 mAside.classList.add('display-grid')
+                document.querySelector('.card-list.piece-actived')?.classList.remove('piece-actived')
+                e.target.classList.add('piece-actived')
             }
         })
 
@@ -76,7 +82,7 @@ harpa.pages.push({
         //obter dados da musica pelo numero
         let { nome, numero, letra } = db.filter(f=>f.numero==numero_do_hino)[0]
 
-        let favorito = harpa.favoritos.get(+numero).includes(+numero) ? 'accent' : 'toned'
+        let favorito = harpa.favoritos.get(+numero).includes(+numero) ? 'accent piece-actived' : ''
 
         //cria o m-layout da pagina de letras
         document.querySelector("#popover-modal")
@@ -103,6 +109,9 @@ harpa.pages.push({
                         background-color-088
                         background-color-084-hover
                         text-color-012
+                        background-color-052-active
+                        background-color-048-hover-active
+                        text-color-012-active
                         ripple-color-048
                         ${favorito}
                     ">
@@ -161,6 +170,7 @@ harpa.pages.push({
             harpa.favoritos.set(+document.querySelector("#popover-letra .numero").innerText)
             event.target.classList.toggle('toned')
             event.target.classList.toggle('accent')
+            event.target.classList.toggle('piece-actived')
         })
 
     }

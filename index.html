@@ -86,7 +86,9 @@
                     piece-surface
                     piece-parent
                     border-color-048
+                    piece-box-shadow
                     box-shadow-color-044-active
+                    border-color-048-active
                 ">
                     <input id="m-search" type="text" placeholder="buscar">
                     <button class="
@@ -128,13 +130,14 @@
                     piece-surface
                     piece-parent
                     background-color-096
+                    piece-box-shadow
                     box-shadow-color-044
                 ">
-                    <section id="numero" class="piece-surface border-color-088">
+                    <section id="numero" class="piece-surface border-color-080">
                         <header>Resultados por número</header>
                         <ul></ul>
                     </section>
-                    <section id="letra" class="piece-surface border-color-088">
+                    <section id="letra" class="piece-surface border-color-080">
                         <header>Resultados por Letra</header>
                         <ul></ul>
                     </section>
@@ -191,7 +194,7 @@
                     .forEach(resultado=> {
 
                         const template = `
-                            <label class="piece-surface background-color-088 text-color-012 tertiary">
+                            <label class="piece-surface background-color-088 text-color-012 tertiary ripple-color-048">
                                 ${resultado.numero}
                                 <span class="piece-ripple"></span>
                             </label>
@@ -203,6 +206,7 @@
                     document.querySelectorAll("#numero ul label").forEach(result=>{
                         result.addEventListener("click", (event)=>{
                             document.querySelectorAll(`#page-home button`)[result.innerText-1].click()
+                            setTimeout(()=>document.querySelector('.close').click(),1)
                         })
                     })
                 }

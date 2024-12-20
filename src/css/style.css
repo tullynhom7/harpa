@@ -97,6 +97,52 @@ body {
                     }
                 }
             }
+            #letra {
+                display: grid;
+                ul {
+                    overflow: scroll;
+                }
+                & button {
+                    display: grid;
+                    padding: 16px;
+                    grid-template-columns: auto 1fr;
+                    width: 100%;
+                    grid-template-areas:
+                        'numero nome'
+                        '. letra'
+                    ;
+                    gap: 16px;
+                    user-select: none;
+                    &>*{pointer-events: none;}
+                    .numero {
+                        grid-area: numero;
+                        width: 48px;
+                        height: 48px;
+                        display: grid;
+                        place-items: center;
+                        border-radius: 16px;
+                        aspect-ratio: 1/1;
+                        font-weight: 900;
+                    }
+                    .nome {
+                        grid-area: nome;
+                        font-size: 20px;
+                        border-radius: 4px;
+                        display: grid;
+                        justify-self: start;
+                        align-self: center;
+                    }
+                    .letra {
+                        grid-area: letra;
+                        padding: 16px;
+                        border-radius: 16px;
+                        text-align: start;
+                    }
+                    &>:where(.numero, .nome):nth-child(-n+15) {
+                        animation: list .6s ease-in-out;
+                    }
+                }
+            }
         }
     }
 

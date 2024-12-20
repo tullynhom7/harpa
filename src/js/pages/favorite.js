@@ -52,7 +52,8 @@ harpa.pages.push({
                         card-list
                         piece-surface
                         background-color-096
-                        background-color-hover-to-096
+                        background-color-092-hover
+                        ripple-color-048
                         piece-ripple-to-096
                     "
                 >

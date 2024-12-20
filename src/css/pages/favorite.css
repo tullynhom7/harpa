@@ -28,7 +28,9 @@
             grid-area: nome;
             font-size: 20px;
             border-radius: 4px;
-            text-align: start;
+            display: grid;
+            justify-self: start;
+            align-self: center;
         }
         .letra {
             grid-area: letra;

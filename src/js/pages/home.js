@@ -73,6 +73,7 @@ harpa.pages.push({
                 mAside.classList.add('display-grid')
                 document.querySelector('.card-list.piece-actived')?.classList.remove('piece-actived')
                 e.target.classList.add('piece-actived')
+                e.target.scrollIntoView({ behavior: 'smooth', block: 'start' })
             }
         })
 
